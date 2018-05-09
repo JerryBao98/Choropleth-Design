@@ -3,21 +3,6 @@ function compareNumbers(a, b) {
     return a - b;
 }
 
-// Find the median of a given data set, 
-// if even the averages of 2 datapoints will be taken
-function findMedian(values) {
-    var half = Math.floor(values.length/2);
-    
-    // if the length of the array is odd
-    if(values.length % 2){
-        return values[half];
-    }
-    // else if its even, take the average
-    else{
-        return (values[half-1] + values[half]) / 2.0;
-    }
-}
-
 // Removes outliers from the array
 function filterOutliers(someArray) {
     
@@ -27,7 +12,7 @@ function filterOutliers(someArray) {
 
     // Find q1 and q3 to find the IQR and determine max/min later
     // Median might be useful later on
-    var median = findMedian(values);
+    // var median = findMedian(values);
     var q1 = values[Math.floor((values.length / 4))];
     var q3 = values[Math.ceil((values.length * (3 / 4)))];
     var iqr = q3 - q1;
@@ -91,6 +76,20 @@ var partitionSize = 4;
 
 main(numberArray, partitionSize)
 
+// Find the median of a given data set, 
+// if even the averages of 2 datapoints will be taken
+/* function findMedian(values) {
+    var half = Math.floor(values.length/2);
+    
+    // if the length of the array is odd
+    if(values.length % 2){
+        return values[half];
+    }
+    // else if its even, take the average
+    else{
+        return (values[half-1] + values[half]) / 2.0;
+    }
+} */
 
 /* // Return the standard deviation from an array
 function standardDeviation(values){
